@@ -30,4 +30,14 @@
 
 package com.raywenderlich.android.creaturemon.model
 
-interface CreatureRepository
+import androidx.lifecycle.LiveData
+
+/*
+* It will be our access point for all CRUD actions for all Local or Remote Databases
+* */
+
+interface CreatureRepository {
+    fun saveCreature(creature: Creature)
+    fun getAllCreatures(): LiveData<List<Creature>>
+    fun clearAllCreatures()
+}
